@@ -5,10 +5,12 @@ const arrayConcat = (a, c) => a.concat(c);
 
 const hasAge = user => !!user.age;
 const olderThan = age => user => user.age > age;
+const isAdmin = user => user.isAdmin;
 const mapUser = user => ({ name: user.name });
 
 module.exports.transducers = data => {
   const findUsers = compose(
+    filter(isAdmin),
     filter(hasAge),
     filter(olderThan(300)),
     map(mapUser)

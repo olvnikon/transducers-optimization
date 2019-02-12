@@ -8,10 +8,12 @@ const arrayConcat = (a, c) => {
 
 const hasAge = user => !!user.age;
 const olderThan = age => user => user.age > age;
+const isAdmin = user => user.isAdmin;
 const mapUser = user => ({ name: user.name });
 
 module.exports.transducersNoConcat = data => {
   const findUsers = compose(
+    filter(isAdmin),
     filter(hasAge),
     filter(olderThan(300)),
     map(mapUser)
