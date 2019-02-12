@@ -12,6 +12,8 @@
     "benchmark": "2.1.4"
   },
   "dependencies": {
-    "ramda": "0.26.1"
+    "ramda": "0.26.1",
+    "rxjs": "6.4.0",
+    "transducers.js": "0.3.2"
   }
 }

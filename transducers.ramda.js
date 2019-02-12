@@ -2,6 +2,7 @@ const R = require('ramda');
 
 const hasAge = user => !!user.age;
 const olderThan = age => user => user.age > age;
+const youngerThan = age => user => user.age < age;
 const isAdmin = user => user.isAdmin;
 const mapUser = user => ({ name: user.name });
 
@@ -10,6 +11,7 @@ module.exports.transducersRamda = data => {
     R.filter(isAdmin),
     R.filter(hasAge),
     R.filter(olderThan(300)),
+    R.filter(youngerThan(600)),
     R.map(mapUser)
   );
 
