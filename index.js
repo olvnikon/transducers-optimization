@@ -5,6 +5,7 @@ const { imperative } = require('./imperative');
 const { transducers } = require('./transducers');
 const { transducersNoConcat } = require('./transducers.noconcat');
 const { chaining } = require('./chaining');
+const { reduce } = require('./reduce');
 
 suite
   .add('imperative', () => {
@@ -15,6 +16,9 @@ suite
   })
   .add('transducersNoConcat', () => {
     transducersNoConcat(users);
+  })
+  .add('reduce', () => {
+    reduce(users);
   })
   .add('chaining', () => {
     chaining(users);
