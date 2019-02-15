@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "ramda": "0.26.1",
-    "rxjs": "6.4.0",
     "transducers.js": "0.3.2"
   }
 }

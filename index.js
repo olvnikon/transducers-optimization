@@ -7,7 +7,6 @@ const { transducers } = require('./transducers');
 const { transducersNoConcat } = require('./transducers.noconcat');
 const { transducersRamda } = require('./transducers.ramda');
 const { transducersLib } = require('./transducers.lib');
-const { transducersRxJs } = require('./transducers.rx');
 const { chaining } = require('./chaining');
 const { reduce } = require('./reduce');
 
@@ -29,14 +28,6 @@ suite
   })
   .add('transducersLib', () => {
     transducersLib(users);
-  })
-  .add('transducersRxJs', {
-    defer: true,
-    fn(defer) {
-      transducersRxJs(users).subscribe(() => {
-        defer.resolve();
-      });
-    }
   })
   .add('reduce', () => {
     reduce(users);
